@@ -1,0 +1,18 @@
+server:
+  port: 80
+
+app:
+  id: apollo
+
+env: DEV
+
+name: app-service-dev
+
+apollo:
+  cluster: service1
+  meta: http://10.10.33.79:8080/ # Apollo 中的 Eureka 注册中心地址
+  bootstrap:
+    namespaces: application
+    enable: true # 启用 apollo
+    eagerLoad:
+      enabled: true

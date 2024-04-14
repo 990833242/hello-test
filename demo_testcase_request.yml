@@ -1,0 +1,11 @@
+
+config:
+    name: "request methods testcase with functions"
+    base_url: "http://10.50.8.11:3333"
+
+teststeps:
+-
+    name: get with params
+    request:
+        method: GET
+        url: /get

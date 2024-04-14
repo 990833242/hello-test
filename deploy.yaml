@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app-demo: "true"
+  name: app-demo
+  namespace: devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app-demo: "true"
+  template:
+    metadata:
+      labels:
+        app-demo: "true"
+      name: app-demo
+      namespace: devops
+    spec:
+      imagePullSecrets:
+        - name: jfrog
+      containers:
+      - name: app-demo
+        image: 10.7.114.33:8081/images/demo:69a4674
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 9999
